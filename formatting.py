@@ -2,7 +2,7 @@
 FORMATTING PROBLEM SET (12 PTS)
 '''
 
-# put your name HERE
+# put your name Nicky
 # https://github.com/fwparkercode/Programming2_SP19
 # New change
 
