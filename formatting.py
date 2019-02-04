@@ -79,4 +79,4 @@ Use print formatting to EXACTLY match the following output:
 
 for i in range(1, 21):
     inverse = 1/i
-    print("{:<.3}".format(inverse))
+    print("1/" + "{:2}".format(i) + " = " + "{:<.3}".format(inverse))
