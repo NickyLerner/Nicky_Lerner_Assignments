@@ -1,7 +1,8 @@
-'''
+done = False
+"""
 Make a text based version of hangman (25pts)
 Use the sample run as an example.  Try to make it as close as possible to the example. (or better)
-'''
+"""
 
 # PSEUDOCODE
 # make a word list for your game
@@ -18,8 +19,9 @@ Use the sample run as an example.  Try to make it as close as possible to the ex
 # ask if they want to play again
 
 
-# Feel free to use this list of ascii art for your game
+# Feel free to use this list of ascii art for your game --- thanks for this
 
+guessed_letters = []
 HANGMANPICS = ['''
   +---+
   |   |
@@ -71,15 +73,5 @@ HANGMANPICS = ['''
       |
 =========''']
 
-
-
-
-
-
-
-
-
-
-
-
-
+while not done:
+    current_letter = input("What letter")

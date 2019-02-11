@@ -57,14 +57,21 @@ for i in range(len(suit_list)):
         deck.append([suit_list[i], value_list[j]])
 
 random.shuffle(deck)
-print(deck)
+shuffled_deck = []
+for i in range(len(deck)):
+    number_in_deck = int(len(deck))
+    pop = random.randrange(number_in_deck)
+    card = deck.pop(pop)
+    shuffled_deck.append(pop)
+
+print(shuffled_deck)
 
 for i in range(5):
-    a = deck.pop(0)
-    hand.append(a)
+    card = shuffled_deck.pop(0)
+    hand.append(card)
 
 print(hand)
-print(deck)
+print(shuffled_deck)
 print()
 # PROBLEM 4 (Illinois Pick 4 - 10pts)
 # Lotteries are known to give awful odds of winning, and incredibly low expected returns on your invevestment.
