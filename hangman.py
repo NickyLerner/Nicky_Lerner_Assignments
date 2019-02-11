@@ -1,4 +1,7 @@
 done = False
+import random
+alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "l", "m", "n", "o", "p"
+            "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 """
 Make a text based version of hangman (25pts)
 Use the sample run as an example.  Try to make it as close as possible to the example. (or better)
@@ -20,8 +23,9 @@ Use the sample run as an example.  Try to make it as close as possible to the ex
 
 
 # Feel free to use this list of ascii art for your game --- thanks for this
-
+word_list = ["CARROT"]
 guessed_letters = []
+misses = 0
 HANGMANPICS = ['''
   +---+
   |   |
@@ -73,5 +77,26 @@ HANGMANPICS = ['''
       |
 =========''']
 
+word = word_list[random.randrange(len(word_list))]
+
 while not done:
-    current_letter = input("What letter")
+    current_letter = input("What letter do you guess?").upper()
+    if current_letter.lower() in alphabet:
+        guessed_letters.append(current_letter.upper())
+        if current_letter in word:
+            print(HANGMANPICS[misses])
+    else:
+        print("That's not a letter.")
+
+    game_over = False
+    while game_over:
+        keep_going = input("Do you want to play again?    (y/n)")
+        if keep_going == "y":
+            game_over = True
+            print("\n\n\n\n\n\nTIME FOR SOME HANGMAN")
+        if keep_going == "n":
+            done = True
+            game_over = False
+
+
+
