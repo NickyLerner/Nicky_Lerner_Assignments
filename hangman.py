@@ -1,6 +1,7 @@
 import random
 done = False
 game_over = False
+answer = False
 print("TIME FOR SOME HANGMAN!\n")
 alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m",
             "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
@@ -85,12 +86,18 @@ spaces = []
 guessed_word = ""
 for i in range(len(word)):
     spaces.append("_")
-for i in range(len(spaces)):
-    print(spaces[i], end=" ")
+
 while not done:
 
+    for letters in spaces:
+        print(letters, end=" ")
+
+    print()
+
     for letters in guessed_letters:
-        print(letters)
+        print(letters + ",", end=" ")
+
+    print()
     current_letter = input("\nWhat letter do you guess?").upper()
 
     if current_letter in guessed_letters:
@@ -106,37 +113,47 @@ while not done:
                 if current_letter == word[i]:
                     spaces[i] = current_letter
 
-            for i in range(len(spaces)):
-                print(spaces[i], end=" ")
-
             for letters in spaces:
                 guessed_word += letters
                 guessed_word = guessed_word[-len(word):]
 
             if guessed_word[-len(word):] == word:
                 game_over = True
+                answer = True
                 print("\nYou Win!")
 
         else:
             misses += 1
             print(HANGMANPICS[misses])
-
+            print("That is", misses, "misses. You have", 6 - misses, "left.")
             if misses == 6:
                 game_over = True
+                answer = True
                 print("Game Over")
 
     else:
         print("That's not a letter.")
 
     while game_over:
+        if answer:
+            misses = 0
+            print(word)
+            answer = False
         keep_going = input("\nDo you want to play again?    (y/n)")
 
         if keep_going == "y":
-            game_over = True
+            game_over = False
+            guessed_letters = []
+            word = word_list[random.randrange(len(word_list))]
+            spaces = []
+            guessed_word = ""
+            for i in range(len(word)):
+                spaces.append("_")
             print("\n\n\n\n\n\nTIME FOR SOME HANGMAN!")
 
         if keep_going == "n":
             done = True
             game_over = False
+
     print()
 print("Goodbye.")
