@@ -32,7 +32,7 @@ print()
 # probability of success using a simulation of a large number of trials.
 
 
-
+print()
 # PROBLEM 3 (Number Puzzler)
 # A, B, C, and D are all different digits.
 # The number DCBA is equal to 4 times the number ABCD.
