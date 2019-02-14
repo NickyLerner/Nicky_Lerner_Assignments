@@ -22,7 +22,7 @@ while not done:
         done = True
 
 print()
-
+print()
 # PROBLEM 2 (Dice Sequence)
 # You roll five six-sided dice, one by one.
 # What is the probability that the value of each die
@@ -31,6 +31,16 @@ print()
 # but “1, 1, 4, 3, 6” is not. Determine the
 # probability of success using a simulation of a large number of trials.
 
+counter = 0
+for i in range(1, 1000001):
+    a = random.randrange(1, 6)
+    b = random.randrange(1, 6)
+    c = random.randrange(1, 6)
+    d = random.randrange(1, 6)
+    e = random.randrange(1, 6)
+    if a <= b <= c <= d <= e:
+        counter += 1
+print("The probability of that thing mentioned happening is ", counter, " in ", i, " or ", round(counter/i, 3), "%.")
 
 print()
 # PROBLEM 3 (Number Puzzler)
