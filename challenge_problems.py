@@ -32,7 +32,7 @@ print()
 # probability of success using a simulation of a large number of trials.
 
 counter = 0
-for i in range(1, 1000001):
+for i in range(1, 10001):
     a = random.randrange(1, 6)
     b = random.randrange(1, 6)
     c = random.randrange(1, 6)
