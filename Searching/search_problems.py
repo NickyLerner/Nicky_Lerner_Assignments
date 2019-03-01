@@ -40,9 +40,7 @@ with open('AliceInWonderland.txt') as f:
     alice_full_text = [x.strip() for x in f]
 
 alice_words = []
-print()
-print(alice_full_text)
-print()
+
 for line in alice_full_text:
     alice_words += split_line(line)
 
