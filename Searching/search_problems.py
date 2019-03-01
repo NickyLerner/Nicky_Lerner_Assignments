@@ -40,9 +40,11 @@ with open('AliceInWonderland.txt') as f:
     alice_full_text = [x.strip() for x in f]
 
 alice_words = []
-
+print()
+print(alice_full_text)
+print()
 for line in alice_full_text:
-    alice_words += split_line(line).upper()
+    alice_words += split_line(line)
 
 print(alice_words)
 alice_word_length = 0
@@ -50,7 +52,7 @@ alice_word_length = 0
 for i in range(len(alice_words)):
     alice_word_length += len(alice_words[i])
 
-alice_word_length = (alice_word_length/len(alice_full_text))
+alice_word_length = (alice_word_length/len(alice_words))
 
 print("WORD COUNT =", len(alice_words))
 print("AVG WORD LEN =", alice_word_length)
@@ -65,11 +67,31 @@ print("AVG WORD LEN =", alice_word_length)
 
 # 3  (12pts)Find the most frequently occurring
 # seven letter word in "AliceInWonderLand.txt"
+print()
+seven_letters_list = []
 
-for i in range(2):
-    print("OOOOOOO")
+for words in alice_words:
+    if len(words) == 7 and words.upper() in dictionary:
+        seven_letters_list.append(words)
 
-# Challenge problem (for fun).
+print(seven_letters_list)
+seven_letters_list_no_repeats = []
+
+for words in seven_letters_list:
+    if words not in seven_letters_list_no_repeats:
+        seven_letters_list_no_repeats.append(words)
+
+max_number = 0
+
+for words in seven_letters_list_no_repeats:
+    i = seven_letters_list.count(words)
+    if i >= max_number:
+        most_occurring_word = words
+        max_number = i
+
+print(most_occurring_word.upper(), "occurs", max_number, "times.")
+
+    # Challenge problem (for fun).
 # What words appear in the text of "Alice in Wonderland"
 # that DO NOT occur in "Alice Through the Looking Glass".
 # Make a list.  You can substitute this for any of the above problems.
