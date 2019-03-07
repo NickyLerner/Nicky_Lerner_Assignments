@@ -50,24 +50,25 @@ def binary_search(text):
         for words in text_current_line_by_words:
             lower_boundary = 0
             upper_boundary = len(dictionary) - 1
-            while lower_boundary <= upper_boundary and good_word:
+            found = False
+            while lower_boundary <= upper_boundary and not found:
                 middle_pos = (lower_boundary + upper_boundary) // 2
                 # Figure out if we:
                 # move up the lower bound, or
                 # move down the upper bound, or
                 # we found what we are looking for
-                if dictionary[middle_pos] < words:
+                if dictionary[middle_pos] < words.upper():
                     lower_boundary = middle_pos + 1
-                elif dictionary[middle_pos] > words:
+                elif dictionary[middle_pos] > words.upper():
                     upper_boundary = middle_pos - 1
                 else:
-                    good_word = False
-            if not good_word:
+                    found = True
+            if not found:
                 print("In line", str(line + 1) + ", possible word,", words + ", misspelled.")
-            good_word = True
 
 
 binary_search(alice_chapter_one_by_line)
+
 
 '''# Loop until we find the item, or our upper/lower bounds meet
 for words in alice_full_text_by_line
