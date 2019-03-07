@@ -93,3 +93,25 @@ print(most_occurring_word.upper(), "occurs", max_number, "times.")
 # What words appear in the text of "Alice in Wonderland"
 # that DO NOT occur in "Alice Through the Looking Glass".
 # Make a list.  You can substitute this for any of the above problems.
+
+with open('AliceThroughTheLookingGlass.txt') as f:
+    alice_two_full_text = [x.strip() for x in f]
+
+old_words = []
+alice_full_text_words = []
+alice_two_full_text_words = []
+
+for line in range(len(alice_full_text)):
+    alice_full_text_words += split_line(alice_full_text[line])
+for line in range(len(alice_two_full_text)):
+    alice_two_full_text_words += split_line(alice_two_full_text[line])
+in_both = True
+
+for words in alice_full_text_words:
+    if words in alice_two_full_text_words:
+        in_both = True
+    else:
+        in_both = False
+    if not in_both:
+        old_words.append(words)
+
