@@ -69,7 +69,6 @@ def binary_search(text):
 
 binary_search(alice_chapter_one_by_line)
 
-
 '''# Loop until we find the item, or our upper/lower bounds meet
 for words in alice_full_text_by_line
     '''
