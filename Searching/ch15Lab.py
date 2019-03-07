@@ -38,7 +38,7 @@ def linear_search(text):
             i = 0
 
 
-# linear_search(alice_chapter_one_by_line)
+linear_search(alice_chapter_one_by_line)
 
 print("---BINARY SEARCH---")
 
