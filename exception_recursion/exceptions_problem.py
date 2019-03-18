@@ -14,3 +14,36 @@
 # (3pts) keeps asking for inputs until they are valid (see while loop from notes)
 # (4pts) calculate the force of gravity in Newtons and print the result to the user in scientific notation to two decimals.
 
+
+G = 6.67e-11
+done = False
+
+while not done:
+    try:
+        mass_1 = float(input("Put in the mass of the first object in kilograms. "))/1000
+        done = True
+    except ValueError:
+        print("That is not a real number")
+
+done = False
+
+while not done:
+    try:
+        mass_2 = float(input("Put in the mass of the second object in kilograms. "))/1000
+        done = True
+    except ValueError:
+        print("That is not a real number")
+
+done = False
+
+while not done:
+    try:
+        radius = float(input("What is the radius between the two objects in meters? "))
+        force = G*mass_1*mass_2/(radius**2)
+        rounded_force = round(force)
+        print("The gravity between the two objects is {:0.2e}.".format(force))
+        done = True
+    except ValueError:
+        print("That is not a real number.")
+    except ZeroDivisionError:
+        print("The two objects cannot be in the same place")
