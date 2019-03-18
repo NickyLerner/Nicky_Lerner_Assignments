@@ -12,7 +12,7 @@
 # (3pts) takes the inputs for mass 1, mass 2.and distance between the two objects (m1, m2, and r) 
 # (4pts) contains exceptions for any potential errors (value and dividebyzero).
 # (3pts) keeps asking for inputs until they are valid (see while loop from notes)
-# (4pts) calculate the force of gravity in Newtons and print the result to the user in scientific notation to two decimals.
+# (4pts) calculate the force of gravity in Newtons. Print the result to the user in scientific notation to two decimals.
 
 
 G = 6.67e-11
@@ -46,4 +46,4 @@ while not done:
     except ValueError:
         print("That is not a real number.")
     except ZeroDivisionError:
-        print("The two objects cannot be in the same place")
+        print("The two objects cannot be in the same place.")
