@@ -35,9 +35,9 @@ def h_fractal(x, y, height, width, depth):
         h_fractal(pos4[0], pos4[1], height // 2, width // 2, depth - 1)
 
 
-# h_fractal(0, 0, 300, 250, 4)
+h_fractal(0, 0, 300, 250, 4)
 
-
+my_turtle.color('red')
 # 2)  Using the turtle library, create any of the other recursive patterns in the data folder.
 #  Challenge yourself to match your pattern as closely as you can to the image.  (10pts)
 #  Note:  The Koch snowflake shows step by step building of the fractal.  
@@ -114,6 +114,7 @@ def triangle_flake(x, y, length, depth):
 # 3)  Create your own work of recursive art with a repeating pattern of your making.
 #  It must be a repeated pattern using recursion (not just loops). Snowflakes, trees, and spirals are a common choice.  
 #  Play around and have fun with it.  (5pt) 
+my_turtle.color('blue')
 
 
 def triangle_upon_triangle(x, y, length, depth):  # We can say that this is the fractal I made myself.
