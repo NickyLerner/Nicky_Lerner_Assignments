@@ -20,4 +20,6 @@ for tweet in tweets:
     tweet_list.append(tweet.text)
 
 for i in range(5):
-    print
+    print()
+    print("tweet number #" + str(i + 1))
+    print(tweet_list[i])
