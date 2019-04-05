@@ -1,4 +1,7 @@
-# SCRAPING LAB 
+from bs4 import BeautifulSoup
+import requests
+
+# SCRAPING LAB
 # (20pts)
 # Below is a link to a 10-day weather forecast at weather.com
 # Use requests and BeautifulSoup to scrape data from the weather table.
@@ -14,3 +17,23 @@
 # However, if you can do it and add the additional info, that works for me.
 
 url = "https://weather.com/weather/tenday/l/USIL0225:1:US"
+page = requests.get(url)
+soup = BeautifulSoup(page.text, "html.parser")
+
+dates = soup.findAll(class_='day-detail clearfix')
+days = soup.findAll(class_='date-time')
+descriptions = soup.findAll(headers='description')
+hilo_temps = soup.findAll(headers='hi-lo')
+rain = soup.findAll(headers='precip')
+wind = soup.findAll(headers='wind')
+
+
+
+for i in range(10):
+    print()
+    print(days[i].text)
+    print(dates[i].text)
+    print(descriptions[i].text)
+    print(hilo_temps[i].text)
+    print(rain[i].text)
+    print(wind[i].text)
