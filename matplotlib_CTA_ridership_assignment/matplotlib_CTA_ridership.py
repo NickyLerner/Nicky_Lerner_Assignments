@@ -56,7 +56,7 @@ plt.plot([x for x in range(10)], rail_rider_numbers_last_10_years, label="Rail R
 bus_and_rail_riders_last_10_years = [x for x in rail_rider_numbers_last_10_years]
 for i in range(10):
     bus_and_rail_riders_last_10_years[i] += bus_rider_numbers_last_10_years[i]
-plt.plot([x for x in range(10)], bus_and_rail_riders_last_10_years, label="Bus Riders + Rail Riders")
+plt.plot([x for x in range(10)], bus_and_rail_riders_last_10_years, label="Bus Riders + Rail Riders", alpha=.5)
 
 # 4  Add a title and label your axes. (5pts)
 
