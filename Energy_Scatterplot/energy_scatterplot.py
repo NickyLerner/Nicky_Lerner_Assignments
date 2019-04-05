@@ -61,10 +61,10 @@ only_schools_that_have_ghg = []
 
 # This doesn't work
 for schools in only_schools:
-    if not len(schools[20]) == 0:
+    if not len(schools[20]) == 0 and not len(schools[21]) == 0:
         only_schools_that_have_ghg.append(schools)
 
-only_schools_that_have_ghg.sort(key=lambda x: float(x[20]))
+only_schools_that_have_ghg.sort(key=lambda x: float(x[21]))
 print(only_schools_that_have_ghg, end="\n"*2)
 
 for i in range(3):
