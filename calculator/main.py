@@ -13,10 +13,16 @@ class CalcApp(App):
 class CalcLayout(BoxLayout):
     def calculate(self, text):
         try:
-            answer = eval(text)
+            answer = round(eval(text), 2)
             self.display.text = str(answer)
-        finally:
-            pass
+        except:
+            self.display.text = "error"
+
+    def tack(self, text):
+        self.display.text += text
+
+    def ac(self):
+        self.display.text = ""
 
 
 if __name__ == "__main__":

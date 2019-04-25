@@ -1,0 +1,32 @@
+<CustomBoxLayout@BoxLayout>:
+    size_hint_y: 1
+    canvas:
+        Color:
+            rgba: 0, 0, 0, 1
+        Line:
+            width: 1
+            rectangle: self.x, self.y, self.width, self.height
+
+<CustomButton@Button>:
+    font_size: 30
+    background_normal: ""
+    background_color: 1, 1, 1, 1
+    color: 0, 0, 0, 1
+    canvas:
+        Color:
+            rgba: 0, 0, 0, 1
+        Line:
+            width: 1
+            rectangle: self.x, self.y, self.width, self.height
+
+
+<CalcLayout>:
+    mass_1: mass_1
+    orientation : "vertical"
+    CustomBoxLayout:
+        TextInput:
+            id: mass_1
+            font_size: 40
+            background_normal: ""
+            background_color: .5, .5, .5, 1
+

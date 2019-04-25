@@ -14,7 +14,7 @@
 # All buttons will be functional.
 
 
-# FORMATTING (10pts
+# FORMATTING (10pts)
 # Make it look and feel like the MACOS calculator as closely as possible.
 # IMPORTANT: You can change the  +/- and % buttons to something else if you want. (maybe exponent?, maybe open close parentheses?)
 # Include spacing and padding as necessary within the grid.
