@@ -2,6 +2,11 @@
     size_hint_y: 1
     canvas:
         Color:
+            rgba: .06, .25, 1, 1
+
+<CustomLabel@Label>
+    canvas:
+        Color:
             rgba: 0, 0, 0, 1
         Line:
             width: 1
@@ -20,13 +25,41 @@
             rectangle: self.x, self.y, self.width, self.height
 
 
-<CalcLayout>:
+<GravityLayout>:
     mass_1: mass_1
+    mass_2: mass_2
+    radius: radius
+    display: display
     orientation : "vertical"
+    canvas:
+        Color:
+            rgba: .06, .25, 1, 1
+    CustomLabel:
+        text: "GRAVITY CALCULATOR"
+    CustomBoxLayout:
+        CustomLabel:
+            text: "Mass of Object 1"
+        CustomLabel:
+            text: "Mass of Object 2"
+        CustomLabel:
+            text: "Distance Between Objects"
     CustomBoxLayout:
         TextInput:
             id: mass_1
-            font_size: 40
-            background_normal: ""
-            background_color: .5, .5, .5, 1
-
+            input_filter: "float" # only allows the thing in quotes
+            size_hint_x: 3
+        TextInput:
+            id: mass_2
+            input_filter: "float" # only allows the thing in quotes
+            size_hint_x: 3
+        TextInput:
+            id: radius
+            input_filter: "float" # only allows the thing in quotes
+            size_hint_x: 3
+    CustomButton:
+        text: "GRAVITIZE!!!!"
+        on_press: root.gravitize(mass_1.text, mass_2.text, radius.text)
+    CustomLabel:
+        id: display
+        font_size: 40
+        text: ""
