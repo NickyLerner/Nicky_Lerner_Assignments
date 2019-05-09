@@ -1,0 +1,36 @@
+<CustomLabel@Label>:
+    font_name: "BROADW.TTF"
+    size_hint_y: 2
+
+<CustomCheckBox@CheckBox>
+    size_hint_x: .2
+
+<FormattingLayout>
+    label: label
+    spin: spin
+    orientation: "vertical"
+    CustomLabel:
+        id: label
+        text: "FLOOF"
+    BoxLayout:
+        Label:
+            text: "Font Options"
+        Spinner:
+            id: spin
+            text: "broadway.ttf" # Sets a default value
+            values: ["broadway.ttf", "wingding.ttf"]
+            on_text: root.label.font_name=self.text
+    BoxLayout:
+        Label:
+            text: "WHAT WILL IT SAY?!?!?!?!?!?!"
+        CustomCheckBox:
+            text: "FLAAF"
+        CustomCheckBox:
+            text: "FLEEF"
+        CustomCheckBox:
+            text: "FLIIF"
+        CustomCheckBox:
+            text: "FLOOF"
+        CustomCheckBox:
+            text: "FLUUF"
+

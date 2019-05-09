@@ -89,8 +89,10 @@ while not a_thousand_exactly:
     while not pythag_triple:
         b += 1
         try:
-            c = int((a**2 + b**2)**(1/2))
-            pythag_triple = True
+            c = ((a**2 + b**2)**(1/2))
+            if c % 1 == 0:
+                pythag_triple = True
+                print("hi")
         except:
             pass
     if a + b + c == 1000:
