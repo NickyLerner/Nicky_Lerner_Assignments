@@ -6,31 +6,80 @@
     size_hint_x: .2
 
 <FormattingLayout>
-    label: label
+    display: display
     spin: spin
+    lights: lights
     orientation: "vertical"
     CustomLabel:
-        id: label
+        id: display
         text: "FLOOF"
+        color: 0, 0, 0, 1
+        background_normal: ""
     BoxLayout:
         Label:
             text: "Font Options"
+            background_normal: ""
         Spinner:
             id: spin
             text: "broadway.ttf" # Sets a default value
             values: ["broadway.ttf", "wingding.ttf"]
-            on_text: root.label.font_name=self.text
+            on_text: root.display.font_name=self.text
     BoxLayout:
         Label:
             text: "WHAT WILL IT SAY?!?!?!?!?!?!"
+            background_normal: ""
         CustomCheckBox:
             text: "FLAAF"
+            group: "text_stuff"
+            on_press: root.change_text(self.text)
+            background_normal: ""
         CustomCheckBox:
             text: "FLEEF"
+            group: "text_stuff"
+            on_press: root.change_text(self.text)
+            background_normal: ""
         CustomCheckBox:
             text: "FLIIF"
+            group: "text_stuff"
+            on_press: root.change_text(self.text)
+            background_normal: ""
         CustomCheckBox:
             text: "FLOOF"
+            group: "text_stuff"
+            on_press: root.change_text(self.text)
         CustomCheckBox:
             text: "FLUUF"
-
+            group: "text_stuff"
+            on_press: root.change_text(self.text)
+        CustomCheckBox:
+            text: "FLYYF"
+            group: "text_stuff"
+            on_press: root.change_text(self.text)
+            background_normal: ""
+    Label:
+        text: "COLOR!!!!"
+        background_normal: ""
+    BoxLayout:
+        Slider:
+            min: 0
+            max : 256
+            step: 1
+            background_normal: ""
+            root.color_change(self, self.value)
+        Slider:
+            min: 0
+            max : 256
+            step: 1
+            background_normal: ""
+            root.color_change(self, self.value)
+        Slider:
+            min: 0
+            max : 256
+            step: 1
+            background_normal: ""
+            root.color_change(self, self.value)
+    BoxLayout:
+        Switch:
+            id: lights
+            on_active: root.light_switch(self.active)
+            background_normal: ""

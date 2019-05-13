@@ -11,10 +11,16 @@ class FormattingApp(App):
 
 
 class FormattingLayout(BoxLayout):
-
-
-    pass
-
+    def change_text(self, words):
+        self.display.text = words
+    def light_switch(self, boolean):
+        if not boolean:
+            self.display.color = 1, 1, 1, 1
+        else:
+            self.display.color = 0, 0, 0, 0
+    def color_change(self, value):
+        self.r = value
+        Window.clearcolor = self.r, self.g, self.b, 1
 
 if __name__ == "__main__":
     app = FormattingApp()
