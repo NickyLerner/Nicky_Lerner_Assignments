@@ -62,22 +62,25 @@
     BoxLayout:
         Slider:
             min: 0
-            max : 256
+            max : 255
             step: 1
             background_normal: ""
-            root.color_change(self, self.value)
+            slider_value: root.color_change(self.value, green.value, blue.value)
+            id: red
         Slider:
             min: 0
-            max : 256
+            max : 255
             step: 1
             background_normal: ""
-            root.color_change(self, self.value)
+            slider_value: root.color_change(red.value, self.value, blue.value)
+            id: green
         Slider:
             min: 0
-            max : 256
+            max : 255
             step: 1
             background_normal: ""
-            root.color_change(self, self.value)
+            slider_value: root.color_change(red.value, green.value, self.value)
+            id: blue
     BoxLayout:
         Switch:
             id: lights
