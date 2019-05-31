@@ -7,14 +7,13 @@ from kivy.uix.widget import Widget
 from kivy.animation import Animation
 from collections import defaultdict
 from random import randint
-from kivy.uix.boxlayout import BoxLayout
 
 done = False
 
 SPRITE_SIZE = sp(20)
 COLS = int(Window.width / SPRITE_SIZE)
 ROWS = int(Window.height / SPRITE_SIZE)
-Window.size = (800, 660)  # --- Adds space for score display
+# Window.size = (800, 650)  # --- Adds space for score display
 
 SNAKE_LENGTH = 4
 SNAKE_SPEED = [.1, .05, .025, 100]  # in seconds
@@ -167,11 +166,6 @@ class Snake(App):
         self.length = SNAKE_LENGTH
         self.head = self.new_head_location
         Snake().stop()
-    def build(self):
-        return SnakeLayout()
-
-class SnakeLayout(BoxLayout):
-    pass
 
 
 if __name__ == '__main__':
