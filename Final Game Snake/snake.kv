@@ -13,7 +13,8 @@
 <Fruit>
     bgcolor: 1, 0, 0, 1
 
-RelativeLayout
+
+<SnakeLayout>
     canvas:
         Color
             rgba: 1, 0, 0, app.alpha
@@ -25,7 +26,7 @@ RelativeLayout
     bgcolor: 1, 1, 1, 1
     size_hint: None, None
     size: [app.sprite_size] * 2
-    pos: [x * app.sprite_size for x in self.coord]
+    pos: 300, 300
     canvas:
         Color
             rgba: self.bgcolor
