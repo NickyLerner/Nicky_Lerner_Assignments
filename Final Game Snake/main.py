@@ -18,7 +18,7 @@ ROWS = int(Window.height / SPRITE_SIZE)
 SNAKE_LENGTH = 4
 SNAKE_SPEED = [.1, .05, .025, 100]  # in seconds
 
-difficulty = 0
+difficulty = 2
 
 ALPHA = .5
 
@@ -148,7 +148,7 @@ class Snake(App):
             self.length += 1
             self.fruit = self.new_fruit_location
             self.score += 1
-            print(self.score)
+#            print(self.score)
         if self.buffer_direction:
             self.try_change_direction(self.buffer_direction)
             self.buffer_direction = ''
@@ -165,9 +165,11 @@ class Snake(App):
         self.snake.clear()
         self.length = SNAKE_LENGTH
         self.head = self.new_head_location
-        Snake().stop()
+        print(self.score)
+        self.score = 0
+        # Snake().stop()
 
 
 if __name__ == '__main__':
     Snake().run()
-    done = True
+    # done = True
