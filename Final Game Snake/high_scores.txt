@@ -1,0 +1,20 @@
+NORMAL:
+1   LNL     15
+2   LNL     12
+3   LNL     10
+4   LNL     7
+5   LNL     5
+
+HARD:
+1   LNL     15
+2   LNL     12
+3   LNL     10
+4   LNL     7
+5   LNL     5
+
+LUNATIC:
+1   LNL     15
+2   LNL     12
+3   LNL     10
+4   LNL     7
+5   LNL     5
